@@ -51,4 +51,15 @@ public class User{
         Matcher matcher= pattern.matcher(phoneNo);
         return matcher.find();
     }
+    /*
+    @desc: matches with password with pattern which have minimum 8 length characters
+    @params: String password given by user
+    @return : boolean  true if matches else false
+     */
+    public boolean PasswordMatcher(String password){
+        String regexPasswd="^[a-zA-Z]{8,}$";
+        Pattern pattern= Pattern.compile(regexPasswd);
+        Matcher matcher= pattern.matcher(password);
+        return matcher.find();
+    }
 }

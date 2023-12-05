@@ -30,6 +30,11 @@ public class Main {
         user.PhoneMatcher("900 1111111111"); // false  three digit country code
         user.PhoneMatcher("90 99999999999"); // false 11 digit phone no.
 
+        //UC5 Password Checker
+        System.out.println(user.PasswordMatcher("viv")); // false as password length<8
+        System.out.println(user.PasswordMatcher("VivekRanjan")); // true as length>=8
+
+
 
     }
 }
