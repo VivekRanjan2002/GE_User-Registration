@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Scanner;
+import static org.example.EmailSample.getEmailSample;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,13 +30,23 @@ public class Main {
         user.PhoneMatcher("900 1111111111"); // false  three digit country code
         user.PhoneMatcher("90 99999999999"); // false 11 digit phone no.
 
-        //UC4 Password Checker
+        //UC4-8 Password Checker
         System.out.println(user.PasswordMatcher("viv")); // false as password length<8
         System.out.println(user.PasswordMatcher("VivekRanjan")); // false as no numeric digit
         System.out.println(user.PasswordMatcher("vivekranjan")); // false as no upper case char
         System.out.println(user.PasswordMatcher("Viv12Ranjan")); //false as len>=8, no special char
         System.out.println(user.PasswordMatcher("Viv12@Ranjan")); //true as len>=8,special char,upper case,numeric digit
 
+        // UC 9 Validating all Email Samples
+        String[] emailSample= getEmailSample();
+        for(String email:emailSample){
+            if(user.EmailMatcher(email)){
+                System.out.println(email+" matches with the pattern");
+            }
+            else{
+                System.out.println(email+" don't match with the pattern");
+            }
+        }
 
     }
 }
