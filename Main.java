@@ -33,6 +33,7 @@ public class Main {
         //UC5 Password Checker
         System.out.println(user.PasswordMatcher("viv")); // false as password length<8
         System.out.println(user.PasswordMatcher("VivekRanjan")); // true as length>=8
+        System.out.println(user.PasswordMatcher("vivekranjan")); // false as no upper case char
 
 
 
