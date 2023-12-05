@@ -58,7 +58,7 @@ public class User{
     @return : boolean  true if matches else false
      */
     public boolean PasswordMatcher(String password){
-        String regexPasswd="^(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]{8,})$";
+        String regexPasswd="^(?=.*[A-Z])(?=.*\\d)(?=\\S*\\W\\S*$).{8,}$";
         Pattern pattern= Pattern.compile(regexPasswd);
         Matcher matcher= pattern.matcher(password);
         return matcher.find();

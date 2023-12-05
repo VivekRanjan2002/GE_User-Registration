@@ -30,11 +30,12 @@ public class Main {
         user.PhoneMatcher("900 1111111111"); // false  three digit country code
         user.PhoneMatcher("90 99999999999"); // false 11 digit phone no.
 
-        //UC5 Password Checker
-        user.PasswordMatcher("viv"); // false as password length<8
-        user.PasswordMatcher("VivekRanjan"); // false as no numeric digit
-        user.PasswordMatcher("vivekranjan"); // false as no upper case char
-        user.PasswordMatcher("Vivek123Ranjan"); //true as len>=8, at least upper case & numeric digit
+        //UC4 Password Checker
+        System.out.println(user.PasswordMatcher("viv")); // false as password length<8
+        System.out.println(user.PasswordMatcher("VivekRanjan")); // false as no numeric digit
+        System.out.println(user.PasswordMatcher("vivekranjan")); // false as no upper case char
+        System.out.println(user.PasswordMatcher("Viv12Ranjan")); //false as len>=8, no special char
+        System.out.println(user.PasswordMatcher("Viv12@Ranjan")); //true as len>=8,special char,upper case,numeric digit
 
 
     }
