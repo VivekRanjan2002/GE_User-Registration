@@ -53,12 +53,12 @@ public class User{
     }
     /*
     @desc: matches with password with pattern which have minimum 8 length characters
-            and have at least one Upper case char
+            and have at least one Upper case char and have at least one numeric digit
     @params: String password given by user
     @return : boolean  true if matches else false
      */
     public boolean PasswordMatcher(String password){
-        String regexPasswd="^(?=.*[A-Z])([a-zA-Z]{8,})$";
+        String regexPasswd="^(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]{8,})$";
         Pattern pattern= Pattern.compile(regexPasswd);
         Matcher matcher= pattern.matcher(password);
         return matcher.find();

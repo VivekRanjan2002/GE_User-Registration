@@ -31,10 +31,10 @@ public class Main {
         user.PhoneMatcher("90 99999999999"); // false 11 digit phone no.
 
         //UC5 Password Checker
-        System.out.println(user.PasswordMatcher("viv")); // false as password length<8
-        System.out.println(user.PasswordMatcher("VivekRanjan")); // true as length>=8
-        System.out.println(user.PasswordMatcher("vivekranjan")); // false as no upper case char
-
+        user.PasswordMatcher("viv"); // false as password length<8
+        user.PasswordMatcher("VivekRanjan"); // false as no numeric digit
+        user.PasswordMatcher("vivekranjan"); // false as no upper case char
+        user.PasswordMatcher("Vivek123Ranjan"); //true as len>=8, at least upper case & numeric digit
 
 
     }
