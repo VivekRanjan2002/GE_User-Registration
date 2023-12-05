@@ -39,4 +39,16 @@ public class User{
        return matcher.find();
 
     }
+    /*
+    @desc: matches with given phoneNo with pattern having country code of 2 digit followed by space and then
+           10 digit phone no. with 0 can't be at first digit
+    @params: String phone no. given by user
+    @return: boolean value true if matches false otherwise
+     */
+    public boolean PhoneMatcher(String phoneNo){
+        String regexPhone= "^[0-9]{2,2}(\\s[1-9][0-9]{9,9})$";
+        Pattern pattern = Pattern.compile(regexPhone);
+        Matcher matcher= pattern.matcher(phoneNo);
+        return matcher.find();
+    }
 }

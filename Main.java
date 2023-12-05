@@ -24,6 +24,12 @@ public class Main {
          user.EmailMatcher("abc+100@gmail.com");      // true
          user.EmailMatcher("abc..123@gmail.com");     // false
 
+       // UC4 Phone No. Checker
+        user.PhoneMatcher("99 1111111111");  // true two digit ph no+ space+ 10 digit ph no
+        user.PhoneMatcher("90 0111111111");  // false first digit of phone no can't be 0
+        user.PhoneMatcher("900 1111111111"); // false  three digit country code
+        user.PhoneMatcher("90 99999999999"); // false 11 digit phone no.
+
 
     }
 }
