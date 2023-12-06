@@ -3,7 +3,7 @@ package org.example;
 import static org.example.EmailSample.getEmailSample;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidUserException {
         System.out.println("Welcome to User Management Interface ");
         User user= new User();
 
@@ -11,6 +11,7 @@ public class Main {
         user.FirstNameMatcher("Viv"); // matches with pattern      true
         user.FirstNameMatcher("vIVek"); // don't match with pattern   false
         user.FirstNameMatcher("Vi12"); // don't match with pattern    false
+        user.LastNameMatcher("");   // throw error
 
         // UC2 Last Name checker
         user.LastNameMatcher("Ranjan"); // matches with pattern   true
